@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="#6c6d6e"
+    android:id="@+id/dl_main"
+    android:layout_height="match_parent"
+    tools:context="com.cet.MainActivity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <EditText
+
+            android:textColor="#e6e6e6"
+            android:imeOptions="actionSearch"
+            android:singleLine="true"
+            android:id="@+id/et_input"
+            android:gravity="left"
+            android:textSize="15sp"
+            android:layout_width="match_parent"
+            android:layout_height="100dp" />
+        <android.support.v4.widget.NestedScrollView
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <TextView
+                    android:textColor="#e6e6e6"
+                    android:textSize="15sp"
+                    android:id="@+id/tv_result"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <FrameLayout
+                    android:visibility="gone"
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/fl_speak"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp">
+                    <Button
+                        android:id="@+id/btn_source"
+                        android:layout_marginLeft="50dp"
+                        android:text="源语言"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <Button
+                        android:id="@+id/btn_result"
+                        android:layout_marginRight="50dp"
+                        android:layout_gravity="right"
+                        android:text="翻译言"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </FrameLayout>
+            </LinearLayout>
+        </android.support.v4.widget.NestedScrollView>
+
+    </LinearLayout>
+    <FrameLayout
+        android:background="#6c6d6e"
+        android:layout_gravity="start"
+        android:layout_width="300dp"
+        android:layout_height="match_parent">
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+        <ProgressBar
+            android:id="@+id/pb"
+            android:layout_gravity="center"
+            android:layout_width="40dp"
+            android:layout_height="40dp" />
+    </FrameLayout>
+
+</android.support.v4.widget.DrawerLayout>
