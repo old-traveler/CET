@@ -60,6 +60,8 @@ public class MainActivity extends AppCompatActivity {
 
     ProgressBar progressBar;
 
+    ProgressBar pb_main;
+
     DrawerLayout dl_main;
 
     boolean isAdd = true;
@@ -82,6 +84,7 @@ public class MainActivity extends AppCompatActivity {
         btn_source = findViewById(R.id.btn_source);
         fl_speak = findViewById(R.id.fl_speak);
         recyclerView = findViewById(R.id.rv);
+        pb_main = findViewById(R.id.pb_main);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         progressBar = findViewById(R.id.pb);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
@@ -131,6 +134,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void loadData(String str){
+        pb_main.setVisibility(View.VISIBLE);
         Call<Result> model = server.loadResult(CommonUtil.getParams(str));
         model.enqueue(new Callback<Result>() {
             @Override
@@ -144,11 +148,13 @@ public class MainActivity extends AppCompatActivity {
                 }else {
                     tv_result.setText("查询出错"+result.getErrorCode());
                 }
+                pb_main.setVisibility(View.GONE);
             }
 
             @Override
             public void onFailure(Call<Result> call, Throwable t) {
                 tv_result.setText(t.getMessage());
+                pb_main.setVisibility(View.GONE);
             }
         });
     }

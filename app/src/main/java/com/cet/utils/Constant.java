@@ -6,9 +6,9 @@ package com.cet.utils;
 
 public class Constant {
 
-    public static final String APP_KEY = "你的应用Key";
+    public static final String APP_KEY = "应用ID";
 
-    public static final String KEY = "你的密匙";
+    public static final String KEY = "应用密匙";
 
     public static final String URL = "https://openapi.youdao.com/";
 

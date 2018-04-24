@@ -24,13 +24,20 @@
             android:layout_width="match_parent"
             android:layout_height="100dp" />
         <android.support.v4.widget.NestedScrollView
-
             android:layout_width="match_parent"
             android:layout_height="match_parent">
             <LinearLayout
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
+                <ProgressBar
+                    android:visibility="gone"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:id="@+id/pb_main"
+                    android:layout_gravity="center"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp" />
                 <TextView
                     android:textColor="#e6e6e6"
                     android:textSize="15sp"
